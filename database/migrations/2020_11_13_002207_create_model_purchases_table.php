@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('store');
             $table->string('payment_method');
             $table->string('status');
-            $table->string('order');$table->timestamp('created_at')->default((new DateTime('now'))->format(DATE_ATOM));
-            $table->timestamp('updated_at')->default((new DateTime('now'))->format(DATE_ATOM));
+            $table->string('order');
+            $table->timestamps();
         });
     }
 

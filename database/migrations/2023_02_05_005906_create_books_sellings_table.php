@@ -17,8 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->integer('book_id');
             $table->integer('selling_id');
-            $table->timestamp('created_at')->default((new DateTime('now'))->format(DATE_ATOM));
-            $table->timestamp('updated_at')->default((new DateTime('now'))->format(DATE_ATOM));
+            $table->timestamps();
         });
     }
 

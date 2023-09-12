@@ -25,7 +25,6 @@ abstract class BaseRepository implements BaseRepositoryInterface
 
     public function update(Model $model, int $id, array $data): void
     {
-        var_dump($data);die();
         $model::query()->where('id', '=', $id)->update($data);
     }
 }
