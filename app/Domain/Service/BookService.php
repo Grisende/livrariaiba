@@ -22,6 +22,8 @@ class BookService
 
     public function insert(array $data): void
     {
+        $data['created_at'] = (new \DateTime('now'))->format(DATE_ATOM);
+        $data['updated_at'] = (new \DateTime('now'))->format(DATE_ATOM);
         $this->repository->insert($this->books, $data);
     }
 
@@ -32,6 +34,7 @@ class BookService
 
     public function update(int $id, array $data): void
     {
+        $data['updated_at'] = (new \DateTime('now'))->format(DATE_ATOM);
         $this->repository->update($this->books, $id, $data);
     }
 }

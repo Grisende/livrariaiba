@@ -18,8 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->double('selling_price', 8, 2)->nullable();
             $table->integer('quantity');
-            $table->timestamp('created_at')->default((new DateTime('now'))->format(DATE_ATOM));
-            $table->timestamp('updated_at')->default((new DateTime('now'))->format(DATE_ATOM));
+            $table->timestamps();
         });
     }
 

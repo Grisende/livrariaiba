@@ -21,8 +21,7 @@ return new class extends Migration
             $table->string('customer_name');
             $table->string('status');
             $table->string('obs')->nullable();
-            $table->timestamp('created_at')->default((new DateTime('now'))->format(DATE_ATOM));
-            $table->timestamp('updated_at')->default((new DateTime('now'))->format(DATE_ATOM));
+            $table->timestamps();
         });
     }
 
