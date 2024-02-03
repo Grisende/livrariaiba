@@ -11,4 +11,5 @@ interface BaseRepositoryInterface
     public function insert(Model $model, array $data): void;
     public function findById(Model $model, int $id): Collection;
     public function update(Model $model, int $id, array $data): void;
+    public function delete(Model $model, int $id): void;
 }

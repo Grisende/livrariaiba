@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->double('selling_price', 8, 2)->nullable();
-            $table->integer('quantity');
+            $table->double('selling_price', 8, 2)->nullable()->default(0.00);
+            $table->integer('quantity')->default(0);
             $table->timestamps();
         });
     }

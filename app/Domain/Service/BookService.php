@@ -37,4 +37,9 @@ class BookService
         $data['updated_at'] = (new \DateTime('now'))->format(DATE_ATOM);
         $this->repository->update($this->books, $id, $data);
     }
+
+    public function delete(int $id): void
+    {
+        $this->repository->delete($this->books, $id);
+    }
 }

@@ -27,4 +27,9 @@ abstract class BaseRepository implements BaseRepositoryInterface
     {
         $model::query()->where('id', '=', $id)->update($data);
     }
+
+    public function delete(Model $model, int $id): void
+    {
+        $model::destroy([$id]);
+    }
 }

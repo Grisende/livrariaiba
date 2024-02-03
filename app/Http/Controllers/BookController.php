@@ -12,9 +12,9 @@ class BookController extends Controller
     {
     }
 
-    public function findAll(): JsonResponse
+    public function findAll(): object
     {
-        return new JsonResponse($this->service->findAll());
+        return $this->service->findAll();
     }
 
     public function insert(Request $request): void
@@ -32,5 +32,10 @@ class BookController extends Controller
     {
         $data = $request->all();
         $this->service->update($id, $data);
+    }
+
+    public function delete(int $id): void
+    {
+        $this->service->delete($id);
     }
 }
